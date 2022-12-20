@@ -2,17 +2,13 @@ import { StatusBar } from "expo-status-bar";
 import React from "react"
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-const SignUp = ({ navigation }) => {
+const SignIn = ({ navigation }) => {
     return (
         <SafeAreaProvider style={styles.container} >
             <StatusBar />
-            <Text style={styles.header}>Getting Started</Text>
-            <Text style={styles.create}>Create an account to continue</Text>
+            <Text style={styles.header}>Welcome Back</Text>
+            <Text style={styles.create}>Sign in to your account</Text>
             <View>
-                <View style={styles.inputContainer}>
-                    <Text style={styles.inputLabel}>Name</Text>
-                    <TextInput style={styles.textInput}></TextInput>
-                </View>
                 <View style={styles.inputContainer}>
                     <Text style={styles.inputLabel}>Email</Text>
                     <TextInput style={styles.textInput}></TextInput>
@@ -21,24 +17,29 @@ const SignUp = ({ navigation }) => {
                     <Text style={styles.inputLabel}>Password</Text>
                     <TextInput style={styles.textInput}></TextInput>
                 </View>
+
+                <View style={{flexDirection: "row",justifyContent: "flex-end", marginBottom:50}}>
+                    <TouchableOpacity>
+                        <Text style={{ alignItems: "flex-end" , fontWeight:"200" }}>Forgot password ?</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
             <View style={styles.touchableContainer}>
-                <TouchableOpacity style={styles.SignUpButton}><Text style={{ color: "white", fontSize: 16, fontWeight: "500" }}>Sign Up</Text></TouchableOpacity>
-                <Text style={{ fontSize: 14, fontWeight: '300', marginBottom: 15 }}>---- Or Sign Up With ----</Text>
+                <TouchableOpacity style={styles.SignUpButton}><Text style={{ color: "white", fontSize: 16, fontWeight: "500" }}>Sign In</Text></TouchableOpacity>
+                <Text style={{ fontSize: 14, fontWeight: '300', marginBottom: 15 }}>---- Or Sign In With ----</Text>
                 <TouchableOpacity style={styles.googleButton}><Text style={{ fontSize: 16 }}>Continue with Google</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.googleButton}><Text style={{ fontSize: 16 }}>Continue with Facebook</Text></TouchableOpacity>
-               
+
             </View>
-            <View style={{flexDirection:"row", alignItems:"center", justifyContent:"center"}}>
-                <Text>Already have an account ?</Text>
-                <TouchableOpacity onPress={()=>navigation.navigate("signin")}>
-                <Text style={{color:"#6e3cbc"}}> Sign in</Text>
+            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+                <Text>Don't have an account ?</Text>
+                <TouchableOpacity onPress={() => navigation.navigate("signup")}>
+                    <Text style={{ color: "#6e3cbc" }}> Sign Up</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaProvider>
     )
 }
-
 
 
 const styles = StyleSheet.create({
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
     },
     create: {
         marginTop: 10,
-        marginBottom: 36,
+        marginBottom: 44,
         fontSize: 20,
         fontWeight: '200',
     },
@@ -106,4 +107,5 @@ const styles = StyleSheet.create({
     }
 
 })
-export default SignUp
+
+export default SignIn
