@@ -1,8 +1,15 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react"
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, SafeAreaView, Linking } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 const SignUp = ({ navigation }) => {
+
+    const googlebutton = () => {
+        Linking.openURL("https://www.google.co.in/")
+    }
+    const facebookbutton = () => {
+        Linking.openURL("https://www.facebook.com/")
+    }
     return (
         <SafeAreaProvider style={styles.container} >
             <StatusBar />
@@ -25,8 +32,8 @@ const SignUp = ({ navigation }) => {
             <View style={styles.touchableContainer}>
                 <TouchableOpacity style={styles.SignUpButton}><Text style={{ color: "white", fontSize: 16, fontWeight: "500" }}>Sign Up</Text></TouchableOpacity>
                 <Text style={{ fontSize: 14, fontWeight: '300', marginBottom: 15 }}>---- Or Sign Up With ----</Text>
-                <TouchableOpacity style={styles.googleButton}><Text style={{ fontSize: 16 }}>Continue with Google</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.googleButton}><Text style={{ fontSize: 16 }}>Continue with Facebook</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.googleButton} onPress={googlebutton}><Text style={{ fontSize: 16 }}>Continue with Google</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.googleButton} onPress={facebookbutton}><Text style={{ fontSize: 16 }}>Continue with Facebook</Text></TouchableOpacity>
                
             </View>
             <View style={{flexDirection:"row", alignItems:"center", justifyContent:"center"}}>

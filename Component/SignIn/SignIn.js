@@ -3,6 +3,7 @@ import React from "react"
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 const SignIn = ({ navigation }) => {
+
     return (
         <SafeAreaProvider style={styles.container} >
             <StatusBar />
@@ -17,15 +18,19 @@ const SignIn = ({ navigation }) => {
                     <Text style={styles.inputLabel}>Password</Text>
                     <TextInput style={styles.textInput}></TextInput>
                 </View>
-
-                <View style={{flexDirection: "row",justifyContent: "flex-end", marginBottom:50}}>
-                    <TouchableOpacity>
-                        <Text style={{ alignItems: "flex-end" , fontWeight:"200" }}>Forgot password ?</Text>
+                <View style={{ flexDirection: "row", justifyContent: "flex-end", marginBottom: 50 }}>
+                    <TouchableOpacity onPress={() => navigation.navigate("forgetpassword")}>
+                        <Text style={{ alignItems: "flex-end", fontWeight: "200", marginTop: -8 }}>Forgot password?</Text>
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={styles.touchableContainer}>
-                <TouchableOpacity style={styles.SignUpButton}><Text style={{ color: "white", fontSize: 16, fontWeight: "500" }}>Sign In</Text></TouchableOpacity>
+            {/* onPress={() => navigation.navigate("home")} */}
+            <View style={styles.touchableContainer}  >
+                <TouchableOpacity style={styles.SignInButton} onPress={() => navigation.navigate("home")}>
+                    <View >
+                        <Text style={{ color: "white", fontSize: 16, fontWeight: "500" }} >Sign In</Text>
+                    </View>
+                </TouchableOpacity>
                 <Text style={{ fontSize: 14, fontWeight: '300', marginBottom: 15 }}>---- Or Sign In With ----</Text>
                 <TouchableOpacity style={styles.googleButton}><Text style={{ fontSize: 16 }}>Continue with Google</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.googleButton}><Text style={{ fontSize: 16 }}>Continue with Facebook</Text></TouchableOpacity>
@@ -74,7 +79,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         alignItems: "center",
     },
-    SignUpButton: {
+    SignInButton: {
         backgroundColor: "#6e3cbc",
         padding: 12,
         width: "100%",
