@@ -1,0 +1,6 @@
+export const home = require("../../assets/home.png")
+export const homeActive = require("../../assets/homeActive.png")
+export const trade = require("../../assets/trade.png")
+export const tradeActive = require('../../assets/tradeActive.png')
+export const market = require("../../assets/Market.png")
+export const marketActive = require("../../assets/MarketActive.png")

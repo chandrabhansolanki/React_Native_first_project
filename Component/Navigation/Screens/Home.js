@@ -2,21 +2,20 @@
 import React from "react"
 import { StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity, FlatList, SafeAreaView, StatusBar, Image } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import MainNaviagtion from "../Navigation/MainNavigation";
 
 const Home = () => {
-    let map = require('../../assets/map.png')
+    let map = require('../../../assets/map.png')
 
 
     const data = [
         {
-            source: require("../../assets/car.jpeg")
+            source: require("../../../assets/car.jpeg")
         },
         {
-            source: require("../../assets/car.jpeg")
+            source: require("../../../assets/car.jpeg")
         },
         {
-            source: require("../../assets/car.jpeg")
+            source: require("../../../assets/car.jpeg")
         }
     ]
 
@@ -27,7 +26,7 @@ const Home = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <StatusBar  />
+            <StatusBar />
             <View style={styles.header} >
                 <View >
                     <Text style={{ color: "#6E3CBC", fontSize: 20, marginBottom: 16 }}>Good Morning,</Text>
@@ -60,7 +59,6 @@ const Home = () => {
                     showsHorizontalScrollIndicator={false}
                 />
             </View>
-            <MainNaviagtion />
         </SafeAreaView>
     )
 }
@@ -68,7 +66,7 @@ const Home = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 80,
+        paddingTop: 60,
         paddingHorizontal: 20,
         backgroundColor: "#fff"
     },

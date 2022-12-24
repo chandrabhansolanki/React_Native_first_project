@@ -6,7 +6,7 @@ import Home from './Component/Home/Home';
 import ForgetPassword from './Component/ForgetPassword/ForgetPassword';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import MainNaviagtion from './Component/Navigation/MainNavigation';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -14,12 +14,13 @@ export default function App() {
   return (
     // <SignUp/>
     <NavigationContainer>
+      {/* <MainNaviagtion /> */}
       <StatusBar />
       <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="signup" component={SignUp} />
         <Stack.Screen name="signin" component={SignIn} />
         <Stack.Screen name="forgetpassword" component={ForgetPassword} />
-        <Stack.Screen name="home" component={Home} />
+        <Stack.Screen name="home" component={MainNaviagtion} />
       </Stack.Navigator>
     </NavigationContainer>
   );
